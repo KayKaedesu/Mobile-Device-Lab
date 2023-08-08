@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { WelcomePage, Programspage } from "./src/lab2";
 import { LabTextInput } from "./src/lab3";
+import { GuessANumber } from "./src/lab4";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,12 @@ const MainPage = ({ navigation }) => {
           <Button
             onPress={() => navigation.navigate("LabTextInput")}
             title="Lab 3"
+          />
+        </View>
+        <View>
+          <Button
+            onPress={() => navigation.navigate("GuessANumber")}
+            title="Lab 4"
           />
         </View>
       </View>
@@ -59,6 +66,13 @@ export default function App() {
             headerShown: false,
           }}
           component={LabTextInput}
+        />
+        <Stack.Screen
+          name="GuessANumber"
+          options={{
+            headerShown: false,
+          }}
+          component={GuessANumber}
         />
       </Stack.Navigator>
     </NavigationContainer>
